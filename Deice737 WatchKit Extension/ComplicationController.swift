@@ -11,13 +11,14 @@ import SwiftUI
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
 
-	// MARK: - Complication Configuration
+	let displayName = "Deice 737?"
 
+	// MARK: - Complication Configuration
 	func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
 		let supportedComplications: [CLKComplicationFamily] = [.circularSmall, .graphicBezel, .graphicCorner, .graphicCircular, .modularSmall, .modularLarge, .utilitarianSmall, .utilitarianLarge,.utilitarianSmallFlat]
 
 		let descriptors = [
-			CLKComplicationDescriptor(identifier: "complication", displayName: "SecondaryIceInspection", supportedFamilies: supportedComplications)
+			CLKComplicationDescriptor(identifier: "complication", displayName: displayName, supportedFamilies: supportedComplications)
 			// Multiple complication support can be added here with more descriptors
 		]
 		// Call the handler with the currently supported complication descriptors
@@ -90,26 +91,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 	}
 
 	private func createTimelineEntry(for complication: CLKComplication) -> CLKComplicationTemplate {
-		let sampleText = "Deice 737?"
+
 		switch complication.family {
 			case .circularSmall:
 				let image = UIImage(named: "Complication/Circular")!
-				let imageProvider = CLKImageProvider(onePieceImage: image)
-				let circularSmall = CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: imageProvider )
+				let circularSmall = CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: image))
 				return circularSmall
 
 			case .graphicBezel:
 				let image = UIImage(named: "Complication/Graphic Bezel")!
 				let fullColorImage = CLKFullColorImageProvider(fullColorImage: image)
 				let graphicCircularImageTemplate = CLKComplicationTemplateGraphicCircularImage(imageProvider: fullColorImage)
-				let text = CLKSimpleTextProvider(text: sampleText)
+				let text = CLKSimpleTextProvider(text: displayName)
 				let graphicBezelTemplate = CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: graphicCircularImageTemplate, textProvider: text)
 				return graphicBezelTemplate
 
 			case .graphicCorner:
 				let image = UIImage(named: "Complication/Graphic Corner")!
 				let fullColorImageProvider = CLKFullColorImageProvider(fullColorImage: image)
-				let text = CLKSimpleTextProvider(text: sampleText)
+				let text = CLKSimpleTextProvider(text: displayName)
 				let graphicCorner = CLKComplicationTemplateGraphicCornerTextImage(textProvider: text, imageProvider: fullColorImageProvider)
 				return graphicCorner
 
@@ -122,7 +122,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 				return modularSmall
 
 			case .modularLarge:
-				let header = CLKSimpleTextProvider(text: sampleText)
+				let header = CLKSimpleTextProvider(text: displayName)
 				let body1 = CLKSimpleTextProvider(text: "Safety Is No Accident!")
 				let modularLarge = CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: header, body1TextProvider: body1)
 				return modularLarge
@@ -134,12 +134,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 				return utilitarianSmall
 
 			case .utilitarianSmallFlat:
-				let text = CLKSimpleTextProvider(text: sampleText, shortText: "737")
+				let text = CLKSimpleTextProvider(text: displayName, shortText: "737")
 				let utilitarianSmallFalt = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: text)
 				return utilitarianSmallFalt
 
 			case .utilitarianLarge:
-				let text = CLKSimpleTextProvider(text: sampleText, shortText: "737")
+				let text = CLKSimpleTextProvider(text: displayName, shortText: "737")
 				let utilitarianLarge = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: text)
 				return utilitarianLarge
 
@@ -157,29 +157,21 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 		// This method will be called once per supported complication, and the results will be cached
 		switch complication.family {
 			case .circularSmall:
-				let entry = createTimelineEntry(for: complication)
-				handler(entry)
+				handler(createTimelineEntry(for: complication))
 			case .graphicBezel:
-				let entry = createTimelineEntry(for: complication)
-				handler(entry)
+				handler(createTimelineEntry(for: complication))
 			case .graphicCorner:
-				let entry = createTimelineEntry(for: complication)
-				handler(entry)
+				handler(createTimelineEntry(for: complication))
 			case .modularSmall:
-				let entry = createTimelineEntry(for: complication)
-				handler(entry)
+				handler(createTimelineEntry(for: complication))
 			case .modularLarge:
-				let entry = createTimelineEntry(for: complication)
-				handler(entry)
+				handler(createTimelineEntry(for: complication))
 			case .utilitarianSmall:
-				let entry = createTimelineEntry(for: complication)
-				handler(entry)
+				handler(createTimelineEntry(for: complication))
 			case .utilitarianSmallFlat:
-				let entry = createTimelineEntry(for: complication)
-				handler(entry)
+				handler(createTimelineEntry(for: complication))
 			case .utilitarianLarge:
-				let entry = createTimelineEntry(for: complication)
-				handler(entry)
+				handler(createTimelineEntry(for: complication))
 			default:
 				handler(nil)
 		}
