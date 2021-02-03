@@ -45,39 +45,39 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
 		switch complication.family {
 			case .circularSmall:
-				let template = createTemplate(for: complication)
+				let template = createTimelineEntry(for: complication)
 				let entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
 				handler(entry)
 			case .graphicBezel:
-				let template = createTemplate(for: complication)
+				let template = createTimelineEntry(for: complication)
 				let entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
 				handler(entry)
 			case .graphicCorner:
-				let template = createTemplate(for: complication)
+				let template = createTimelineEntry(for: complication)
 				let entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
 				handler(entry)
 			case .graphicCircular:
-				let template = createTemplate(for: complication)
+				let template = createTimelineEntry(for: complication)
 				let entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
 				handler(entry)
 			case .modularSmall:
-				let template = createTemplate(for: complication)
+				let template = createTimelineEntry(for: complication)
 				let entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
 				handler(entry)
 			case .modularLarge:
-				let template = createTemplate(for: complication)
+				let template = createTimelineEntry(for: complication)
 				let entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
 				handler(entry)
 			case .utilitarianSmall:
-				let template = createTemplate(for: complication)
+				let template = createTimelineEntry(for: complication)
 				let entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
 				handler(entry)
 			case .utilitarianSmallFlat:
-				let template = createTemplate(for: complication)
+				let template = createTimelineEntry(for: complication)
 				let entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
 				handler(entry)
 			case .utilitarianLarge:
-				let template = createTemplate(for: complication)
+				let template = createTimelineEntry(for: complication)
 				let entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: template)
 				handler(entry)
 			default:
@@ -91,18 +91,60 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 		handler(nil)
 	}
 
-	// MARK: - Sample Templates
-	private func createTemplate(for complication: CLKComplication) -> CLKComplicationTemplate {
+	private func createTimelineEntry(for complication: CLKComplication) -> CLKComplicationTemplate {
+		let sampleText = "Deice 737?"
 		switch complication.family {
 			case .circularSmall:
 				let image = UIImage(named: "Complication/Circular")!
 				let imageProvider = CLKImageProvider(onePieceImage: image)
 				let circularSmall = CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: imageProvider )
-				#warning("Implementation is not complete yet.")
-				// you must implement all supported complications for the templates.
 				return circularSmall
+
+			case .graphicBezel:
+				let image = UIImage(named: "Complication/Graphic Bezel")!
+				let fullColorImage = CLKFullColorImageProvider(fullColorImage: image)
+				let graphicCircularImageTemplate = CLKComplicationTemplateGraphicCircularImage(imageProvider: fullColorImage)
+				let text = CLKSimpleTextProvider(text: sampleText)
+				let graphicBezelTemplate = CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: graphicCircularImageTemplate, textProvider: text)
+				return graphicBezelTemplate
+
+			case .graphicCorner:
+				let image = UIImage(named: "Complication/Graphic Corner")!
+				let fullColorImageProvider = CLKFullColorImageProvider(fullColorImage: image)
+				let text = CLKSimpleTextProvider(text: sampleText)
+				let graphicCorner = CLKComplicationTemplateGraphicCornerTextImage(textProvider: text, imageProvider: fullColorImageProvider)
+				return graphicCorner
+
 			case .graphicCircular:
 				return CLKComplicationTemplateGraphicCircularView(GraphicCircular())
+
+			case .modularSmall:
+				let image = UIImage(named: "Complication/Modular")!
+				let modularSmall = CLKComplicationTemplateModularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: image))
+				return modularSmall
+
+			case .modularLarge:
+				let header = CLKSimpleTextProvider(text: sampleText)
+				let body1 = CLKSimpleTextProvider(text: "Safety Is No Accident!")
+				let modularLarge = CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: header, body1TextProvider: body1)
+				return modularLarge
+
+			case .utilitarianSmall:
+				let image = UIImage(named: "Complication/Utilitarian")!
+				let imageProvider = CLKImageProvider(onePieceImage: image)
+				let utilitarianSmall = CLKComplicationTemplateUtilitarianSmallSquare(imageProvider: imageProvider)
+				return utilitarianSmall
+
+			case .utilitarianSmallFlat:
+				let text = CLKSimpleTextProvider(text: sampleText, shortText: "737")
+				let utilitarianSmallFalt = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: text)
+				return utilitarianSmallFalt
+
+			case .utilitarianLarge:
+				let text = CLKSimpleTextProvider(text: sampleText, shortText: "737")
+				let utilitarianLarge = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: text)
+				return utilitarianLarge
+
 			default:
 				let image = UIImage(named: "Complication/Circular")!
 				let imageProvider = CLKImageProvider(onePieceImage: image)
@@ -111,30 +153,32 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 		}
 	}
 
+	// MARK: - Templates for Selection and Lockscreen Display
 	func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
 		// This method will be called once per supported complication, and the results will be cached
 		let sampleText = "Deice 737?"
 		switch complication.family {
 			case .circularSmall:
+				let entry = createTimelineEntry(for: complication)
 				let image = UIImage(named: "Complication/Circular")!
 				let imageProvider = CLKImageProvider(onePieceImage: image)
 				let circularSmall = CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: imageProvider )
-				handler(circularSmall)
+				handler(entry)
 			case .graphicBezel:
-				guard let image = UIImage(named: "Complication/Graphic Bezel") else { return }
+				let image = UIImage(named: "Complication/Graphic Bezel")!
 				let fullColorImage = CLKFullColorImageProvider(fullColorImage: image)
 				let graphicCircularImageTemplate = CLKComplicationTemplateGraphicCircularImage(imageProvider: fullColorImage)
 				let text = CLKSimpleTextProvider(text: sampleText)
 				let graphicBezelTemplate = CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: graphicCircularImageTemplate, textProvider: text)
 				handler(graphicBezelTemplate)
 			case .graphicCorner:
-				guard let image = UIImage(named: "Complication/Graphic Corner") else { return }
+				let image = UIImage(named: "Complication/Graphic Corner")!
 				let fullColorImageProvider = CLKFullColorImageProvider(fullColorImage: image)
 				let text = CLKSimpleTextProvider(text: sampleText)
 				let graphicCorner = CLKComplicationTemplateGraphicCornerTextImage(textProvider: text, imageProvider: fullColorImageProvider)
 				handler(graphicCorner)
 			case .modularSmall:
-				guard let image = UIImage(named: "Complication/Modular") else { return }
+				let image = UIImage(named: "Complication/Modular")!
 				let modularSmall = CLKComplicationTemplateModularSmallSimpleImage(imageProvider: CLKImageProvider(onePieceImage: image))
 				handler(modularSmall)
 			case .modularLarge:
@@ -143,7 +187,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 				let modularLarge = CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: header, body1TextProvider: body1)
 				handler(modularLarge)
 			case .utilitarianSmall:
-				guard let image = UIImage(named: "Complication/Utilitarian") else { return }
+				let image = UIImage(named: "Complication/Utilitarian")!
 				let imageProvider = CLKImageProvider(onePieceImage: image)
 				let utilitarianSmall = CLKComplicationTemplateUtilitarianSmallSquare(imageProvider: imageProvider)
 				handler(utilitarianSmall)
