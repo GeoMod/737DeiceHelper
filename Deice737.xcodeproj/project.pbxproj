@@ -1,0 +1,888 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18DCD4BF25CADA6800A502A9 /* Deice737App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4BE25CADA6800A502A9 /* Deice737App.swift */; };
+		18DCD4C125CADA6800A502A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4C025CADA6800A502A9 /* ContentView.swift */; };
+		18DCD4C325CADA6A00A502A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD4C225CADA6A00A502A9 /* Assets.xcassets */; };
+		18DCD4C625CADA6A00A502A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD4C525CADA6A00A502A9 /* Preview Assets.xcassets */; };
+		18DCD4D125CADA6A00A502A9 /* Deice737Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4D025CADA6A00A502A9 /* Deice737Tests.swift */; };
+		18DCD4DC25CADA6A00A502A9 /* Deice737UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4DB25CADA6A00A502A9 /* Deice737UITests.swift */; };
+		18DCD4E125CADA6A00A502A9 /* Deice737 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 18DCD4E025CADA6A00A502A9 /* Deice737 WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18DCD4E625CADA6B00A502A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD4E525CADA6B00A502A9 /* Assets.xcassets */; };
+		18DCD4ED25CADA6B00A502A9 /* Deice737 WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18DCD4EC25CADA6B00A502A9 /* Deice737 WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18DCD4F225CADA6B00A502A9 /* Deice737App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4F125CADA6B00A502A9 /* Deice737App.swift */; };
+		18DCD4F425CADA6B00A502A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4F325CADA6B00A502A9 /* ContentView.swift */; };
+		18DCD4F625CADA6B00A502A9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4F525CADA6B00A502A9 /* NotificationController.swift */; };
+		18DCD4F825CADA6B00A502A9 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4F725CADA6B00A502A9 /* NotificationView.swift */; };
+		18DCD4FA25CADA6B00A502A9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4F925CADA6B00A502A9 /* ComplicationController.swift */; };
+		18DCD4FC25CADA6C00A502A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD4FB25CADA6C00A502A9 /* Assets.xcassets */; };
+		18DCD4FF25CADA6C00A502A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD4FE25CADA6C00A502A9 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18DCD4CD25CADA6A00A502A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DCD4B325CADA6700A502A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18DCD4BA25CADA6800A502A9;
+			remoteInfo = Deice737;
+		};
+		18DCD4D825CADA6A00A502A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DCD4B325CADA6700A502A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18DCD4BA25CADA6800A502A9;
+			remoteInfo = Deice737;
+		};
+		18DCD4E225CADA6A00A502A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DCD4B325CADA6700A502A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18DCD4DF25CADA6A00A502A9;
+			remoteInfo = "Deice737 WatchKit App";
+		};
+		18DCD4EE25CADA6B00A502A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18DCD4B325CADA6700A502A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18DCD4EB25CADA6B00A502A9;
+			remoteInfo = "Deice737 WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18DCD50725CADA6C00A502A9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				18DCD4ED25CADA6B00A502A9 /* Deice737 WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD50B25CADA6C00A502A9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				18DCD4E125CADA6A00A502A9 /* Deice737 WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		18DCD4BB25CADA6800A502A9 /* Deice737.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deice737.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18DCD4BE25CADA6800A502A9 /* Deice737App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deice737App.swift; sourceTree = "<group>"; };
+		18DCD4C025CADA6800A502A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		18DCD4C225CADA6A00A502A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18DCD4C525CADA6A00A502A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		18DCD4C725CADA6A00A502A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18DCD4CC25CADA6A00A502A9 /* Deice737Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Deice737Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18DCD4D025CADA6A00A502A9 /* Deice737Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deice737Tests.swift; sourceTree = "<group>"; };
+		18DCD4D225CADA6A00A502A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18DCD4D725CADA6A00A502A9 /* Deice737UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Deice737UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18DCD4DB25CADA6A00A502A9 /* Deice737UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deice737UITests.swift; sourceTree = "<group>"; };
+		18DCD4DD25CADA6A00A502A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18DCD4E025CADA6A00A502A9 /* Deice737 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Deice737 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18DCD4E525CADA6B00A502A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18DCD4E725CADA6B00A502A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18DCD4EC25CADA6B00A502A9 /* Deice737 WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Deice737 WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18DCD4F125CADA6B00A502A9 /* Deice737App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deice737App.swift; sourceTree = "<group>"; };
+		18DCD4F325CADA6B00A502A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		18DCD4F525CADA6B00A502A9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		18DCD4F725CADA6B00A502A9 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		18DCD4F925CADA6B00A502A9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		18DCD4FB25CADA6C00A502A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18DCD4FE25CADA6C00A502A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		18DCD50025CADA6C00A502A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18DCD50125CADA6C00A502A9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18DCD4B825CADA6800A502A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4C925CADA6A00A502A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4D425CADA6A00A502A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4E925CADA6B00A502A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18DCD4B225CADA6700A502A9 = {
+			isa = PBXGroup;
+			children = (
+				18DCD4BD25CADA6800A502A9 /* Deice737 */,
+				18DCD4CF25CADA6A00A502A9 /* Deice737Tests */,
+				18DCD4DA25CADA6A00A502A9 /* Deice737UITests */,
+				18DCD4E425CADA6A00A502A9 /* Deice737 WatchKit App */,
+				18DCD4F025CADA6B00A502A9 /* Deice737 WatchKit Extension */,
+				18DCD4BC25CADA6800A502A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18DCD4BC25CADA6800A502A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18DCD4BB25CADA6800A502A9 /* Deice737.app */,
+				18DCD4CC25CADA6A00A502A9 /* Deice737Tests.xctest */,
+				18DCD4D725CADA6A00A502A9 /* Deice737UITests.xctest */,
+				18DCD4E025CADA6A00A502A9 /* Deice737 WatchKit App.app */,
+				18DCD4EC25CADA6B00A502A9 /* Deice737 WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18DCD4BD25CADA6800A502A9 /* Deice737 */ = {
+			isa = PBXGroup;
+			children = (
+				18DCD4BE25CADA6800A502A9 /* Deice737App.swift */,
+				18DCD4C025CADA6800A502A9 /* ContentView.swift */,
+				18DCD4C225CADA6A00A502A9 /* Assets.xcassets */,
+				18DCD4C725CADA6A00A502A9 /* Info.plist */,
+				18DCD4C425CADA6A00A502A9 /* Preview Content */,
+			);
+			path = Deice737;
+			sourceTree = "<group>";
+		};
+		18DCD4C425CADA6A00A502A9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				18DCD4C525CADA6A00A502A9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		18DCD4CF25CADA6A00A502A9 /* Deice737Tests */ = {
+			isa = PBXGroup;
+			children = (
+				18DCD4D025CADA6A00A502A9 /* Deice737Tests.swift */,
+				18DCD4D225CADA6A00A502A9 /* Info.plist */,
+			);
+			path = Deice737Tests;
+			sourceTree = "<group>";
+		};
+		18DCD4DA25CADA6A00A502A9 /* Deice737UITests */ = {
+			isa = PBXGroup;
+			children = (
+				18DCD4DB25CADA6A00A502A9 /* Deice737UITests.swift */,
+				18DCD4DD25CADA6A00A502A9 /* Info.plist */,
+			);
+			path = Deice737UITests;
+			sourceTree = "<group>";
+		};
+		18DCD4E425CADA6A00A502A9 /* Deice737 WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				18DCD4E525CADA6B00A502A9 /* Assets.xcassets */,
+				18DCD4E725CADA6B00A502A9 /* Info.plist */,
+			);
+			path = "Deice737 WatchKit App";
+			sourceTree = "<group>";
+		};
+		18DCD4F025CADA6B00A502A9 /* Deice737 WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				18DCD4F125CADA6B00A502A9 /* Deice737App.swift */,
+				18DCD4F325CADA6B00A502A9 /* ContentView.swift */,
+				18DCD4F525CADA6B00A502A9 /* NotificationController.swift */,
+				18DCD4F725CADA6B00A502A9 /* NotificationView.swift */,
+				18DCD4F925CADA6B00A502A9 /* ComplicationController.swift */,
+				18DCD4FB25CADA6C00A502A9 /* Assets.xcassets */,
+				18DCD50025CADA6C00A502A9 /* Info.plist */,
+				18DCD50125CADA6C00A502A9 /* PushNotificationPayload.apns */,
+				18DCD4FD25CADA6C00A502A9 /* Preview Content */,
+			);
+			path = "Deice737 WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		18DCD4FD25CADA6C00A502A9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				18DCD4FE25CADA6C00A502A9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18DCD4BA25CADA6800A502A9 /* Deice737 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18DCD50C25CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737" */;
+			buildPhases = (
+				18DCD4B725CADA6800A502A9 /* Sources */,
+				18DCD4B825CADA6800A502A9 /* Frameworks */,
+				18DCD4B925CADA6800A502A9 /* Resources */,
+				18DCD50B25CADA6C00A502A9 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18DCD4E325CADA6A00A502A9 /* PBXTargetDependency */,
+			);
+			name = Deice737;
+			productName = Deice737;
+			productReference = 18DCD4BB25CADA6800A502A9 /* Deice737.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18DCD4CB25CADA6A00A502A9 /* Deice737Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18DCD50F25CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737Tests" */;
+			buildPhases = (
+				18DCD4C825CADA6A00A502A9 /* Sources */,
+				18DCD4C925CADA6A00A502A9 /* Frameworks */,
+				18DCD4CA25CADA6A00A502A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18DCD4CE25CADA6A00A502A9 /* PBXTargetDependency */,
+			);
+			name = Deice737Tests;
+			productName = Deice737Tests;
+			productReference = 18DCD4CC25CADA6A00A502A9 /* Deice737Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18DCD4D625CADA6A00A502A9 /* Deice737UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18DCD51225CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737UITests" */;
+			buildPhases = (
+				18DCD4D325CADA6A00A502A9 /* Sources */,
+				18DCD4D425CADA6A00A502A9 /* Frameworks */,
+				18DCD4D525CADA6A00A502A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18DCD4D925CADA6A00A502A9 /* PBXTargetDependency */,
+			);
+			name = Deice737UITests;
+			productName = Deice737UITests;
+			productReference = 18DCD4D725CADA6A00A502A9 /* Deice737UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		18DCD4DF25CADA6A00A502A9 /* Deice737 WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18DCD50825CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737 WatchKit App" */;
+			buildPhases = (
+				18DCD4DE25CADA6A00A502A9 /* Resources */,
+				18DCD50725CADA6C00A502A9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18DCD4EF25CADA6B00A502A9 /* PBXTargetDependency */,
+			);
+			name = "Deice737 WatchKit App";
+			productName = "Deice737 WatchKit App";
+			productReference = 18DCD4E025CADA6A00A502A9 /* Deice737 WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		18DCD4EB25CADA6B00A502A9 /* Deice737 WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18DCD50425CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737 WatchKit Extension" */;
+			buildPhases = (
+				18DCD4E825CADA6B00A502A9 /* Sources */,
+				18DCD4E925CADA6B00A502A9 /* Frameworks */,
+				18DCD4EA25CADA6B00A502A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Deice737 WatchKit Extension";
+			productName = "Deice737 WatchKit Extension";
+			productReference = 18DCD4EC25CADA6B00A502A9 /* Deice737 WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18DCD4B325CADA6700A502A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					18DCD4BA25CADA6800A502A9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					18DCD4CB25CADA6A00A502A9 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 18DCD4BA25CADA6800A502A9;
+					};
+					18DCD4D625CADA6A00A502A9 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 18DCD4BA25CADA6800A502A9;
+					};
+					18DCD4DF25CADA6A00A502A9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					18DCD4EB25CADA6B00A502A9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 18DCD4B625CADA6700A502A9 /* Build configuration list for PBXProject "Deice737" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18DCD4B225CADA6700A502A9;
+			productRefGroup = 18DCD4BC25CADA6800A502A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18DCD4BA25CADA6800A502A9 /* Deice737 */,
+				18DCD4CB25CADA6A00A502A9 /* Deice737Tests */,
+				18DCD4D625CADA6A00A502A9 /* Deice737UITests */,
+				18DCD4DF25CADA6A00A502A9 /* Deice737 WatchKit App */,
+				18DCD4EB25CADA6B00A502A9 /* Deice737 WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18DCD4B925CADA6800A502A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DCD4C625CADA6A00A502A9 /* Preview Assets.xcassets in Resources */,
+				18DCD4C325CADA6A00A502A9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4CA25CADA6A00A502A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4D525CADA6A00A502A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4DE25CADA6A00A502A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DCD4E625CADA6B00A502A9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4EA25CADA6B00A502A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DCD4FF25CADA6C00A502A9 /* Preview Assets.xcassets in Resources */,
+				18DCD4FC25CADA6C00A502A9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18DCD4B725CADA6800A502A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DCD4C125CADA6800A502A9 /* ContentView.swift in Sources */,
+				18DCD4BF25CADA6800A502A9 /* Deice737App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4C825CADA6A00A502A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DCD4D125CADA6A00A502A9 /* Deice737Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4D325CADA6A00A502A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DCD4DC25CADA6A00A502A9 /* Deice737UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18DCD4E825CADA6B00A502A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18DCD4F625CADA6B00A502A9 /* NotificationController.swift in Sources */,
+				18DCD4F425CADA6B00A502A9 /* ContentView.swift in Sources */,
+				18DCD4FA25CADA6B00A502A9 /* ComplicationController.swift in Sources */,
+				18DCD4F225CADA6B00A502A9 /* Deice737App.swift in Sources */,
+				18DCD4F825CADA6B00A502A9 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18DCD4CE25CADA6A00A502A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18DCD4BA25CADA6800A502A9 /* Deice737 */;
+			targetProxy = 18DCD4CD25CADA6A00A502A9 /* PBXContainerItemProxy */;
+		};
+		18DCD4D925CADA6A00A502A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18DCD4BA25CADA6800A502A9 /* Deice737 */;
+			targetProxy = 18DCD4D825CADA6A00A502A9 /* PBXContainerItemProxy */;
+		};
+		18DCD4E325CADA6A00A502A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18DCD4DF25CADA6A00A502A9 /* Deice737 WatchKit App */;
+			targetProxy = 18DCD4E225CADA6A00A502A9 /* PBXContainerItemProxy */;
+		};
+		18DCD4EF25CADA6B00A502A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18DCD4EB25CADA6B00A502A9 /* Deice737 WatchKit Extension */;
+			targetProxy = 18DCD4EE25CADA6B00A502A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		18DCD50225CADA6C00A502A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		18DCD50325CADA6C00A502A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		18DCD50525CADA6C00A502A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Deice737 WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Deice737 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		18DCD50625CADA6C00A502A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Deice737 WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Deice737 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		18DCD50925CADA6C00A502A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				IBSC_MODULE = Deice737_WatchKit_Extension;
+				INFOPLIST_FILE = "Deice737 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		18DCD50A25CADA6C00A502A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				IBSC_MODULE = Deice737_WatchKit_Extension;
+				INFOPLIST_FILE = "Deice737 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		18DCD50D25CADA6C00A502A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Deice737/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Deice737/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18DCD50E25CADA6C00A502A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Deice737/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Deice737/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18DCD51025CADA6C00A502A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				INFOPLIST_FILE = Deice737Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deice737.app/Deice737";
+			};
+			name = Debug;
+		};
+		18DCD51125CADA6C00A502A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				INFOPLIST_FILE = Deice737Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deice737.app/Deice737";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18DCD51325CADA6C00A502A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				INFOPLIST_FILE = Deice737UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Deice737;
+			};
+			name = Debug;
+		};
+		18DCD51425CADA6C00A502A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q332864D3;
+				INFOPLIST_FILE = Deice737UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ImpulseCoupledDevelopment.Deice737UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Deice737;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18DCD4B625CADA6700A502A9 /* Build configuration list for PBXProject "Deice737" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18DCD50225CADA6C00A502A9 /* Debug */,
+				18DCD50325CADA6C00A502A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18DCD50425CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737 WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18DCD50525CADA6C00A502A9 /* Debug */,
+				18DCD50625CADA6C00A502A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18DCD50825CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737 WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18DCD50925CADA6C00A502A9 /* Debug */,
+				18DCD50A25CADA6C00A502A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18DCD50C25CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18DCD50D25CADA6C00A502A9 /* Debug */,
+				18DCD50E25CADA6C00A502A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18DCD50F25CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18DCD51025CADA6C00A502A9 /* Debug */,
+				18DCD51125CADA6C00A502A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18DCD51225CADA6C00A502A9 /* Build configuration list for PBXNativeTarget "Deice737UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18DCD51325CADA6C00A502A9 /* Debug */,
+				18DCD51425CADA6C00A502A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18DCD4B325CADA6700A502A9 /* Project object */;
+}
