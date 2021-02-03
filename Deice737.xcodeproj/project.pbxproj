@@ -23,6 +23,8 @@
 		18DCD4FA25CADA6B00A502A9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4F925CADA6B00A502A9 /* ComplicationController.swift */; };
 		18DCD4FC25CADA6C00A502A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD4FB25CADA6C00A502A9 /* Assets.xcassets */; };
 		18DCD4FF25CADA6C00A502A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD4FE25CADA6C00A502A9 /* Preview Assets.xcassets */; };
+		18DCD52025CADAC200A502A9 /* AlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD51F25CADAC200A502A9 /* AlertData.swift */; };
+		18DCD52125CADAC200A502A9 /* AlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD51F25CADAC200A502A9 /* AlertData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,7 @@
 		18DCD4FE25CADA6C00A502A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18DCD50025CADA6C00A502A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18DCD50125CADA6C00A502A9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		18DCD51F25CADAC200A502A9 /* AlertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				18DCD4BD25CADA6800A502A9 /* Deice737 */,
-				18DCD4CF25CADA6A00A502A9 /* Deice737Tests */,
-				18DCD4DA25CADA6A00A502A9 /* Deice737UITests */,
 				18DCD4E425CADA6A00A502A9 /* Deice737 WatchKit App */,
 				18DCD4F025CADA6B00A502A9 /* Deice737 WatchKit Extension */,
+				18DCD4CF25CADA6A00A502A9 /* Deice737Tests */,
+				18DCD4DA25CADA6A00A502A9 /* Deice737UITests */,
 				18DCD4BC25CADA6800A502A9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			children = (
 				18DCD4BE25CADA6800A502A9 /* Deice737App.swift */,
 				18DCD4C025CADA6800A502A9 /* ContentView.swift */,
+				18DCD51F25CADAC200A502A9 /* AlertData.swift */,
 				18DCD4C225CADA6A00A502A9 /* Assets.xcassets */,
 				18DCD4C725CADA6A00A502A9 /* Info.plist */,
 				18DCD4C425CADA6A00A502A9 /* Preview Content */,
@@ -217,9 +221,9 @@
 			children = (
 				18DCD4F125CADA6B00A502A9 /* Deice737App.swift */,
 				18DCD4F325CADA6B00A502A9 /* ContentView.swift */,
+				18DCD4F925CADA6B00A502A9 /* ComplicationController.swift */,
 				18DCD4F525CADA6B00A502A9 /* NotificationController.swift */,
 				18DCD4F725CADA6B00A502A9 /* NotificationView.swift */,
-				18DCD4F925CADA6B00A502A9 /* ComplicationController.swift */,
 				18DCD4FB25CADA6C00A502A9 /* Assets.xcassets */,
 				18DCD50025CADA6C00A502A9 /* Info.plist */,
 				18DCD50125CADA6C00A502A9 /* PushNotificationPayload.apns */,
@@ -427,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DCD4C125CADA6800A502A9 /* ContentView.swift in Sources */,
+				18DCD52025CADAC200A502A9 /* AlertData.swift in Sources */,
 				18DCD4BF25CADA6800A502A9 /* Deice737App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +460,7 @@
 				18DCD4F425CADA6B00A502A9 /* ContentView.swift in Sources */,
 				18DCD4FA25CADA6B00A502A9 /* ComplicationController.swift in Sources */,
 				18DCD4F225CADA6B00A502A9 /* Deice737App.swift in Sources */,
+				18DCD52125CADAC200A502A9 /* AlertData.swift in Sources */,
 				18DCD4F825CADA6B00A502A9 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,7 +622,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -641,7 +647,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -661,7 +667,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -682,7 +688,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -696,7 +702,7 @@
 				DEVELOPMENT_TEAM = 4Q332864D3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Deice737/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -719,7 +725,7 @@
 				DEVELOPMENT_TEAM = 4Q332864D3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Deice737/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

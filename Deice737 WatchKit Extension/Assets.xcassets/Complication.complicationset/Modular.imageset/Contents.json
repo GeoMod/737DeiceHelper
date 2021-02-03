@@ -1,21 +1,25 @@
 {
   "images" : [
     {
+      "filename" : "Modular52@1x.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
+      "filename" : "Modular58@1x.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">161"
     },
     {
+      "filename" : "Modular58@1x-1.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">145"
     },
     {
+      "filename" : "Modular64@1x.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"

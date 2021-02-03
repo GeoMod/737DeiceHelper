@@ -1,11 +1,25 @@
 {
   "images" : [
     {
+      "filename" : "GraphicCorner40@1x.png",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "screen-width" : "<=145"
+    },
+    {
+      "filename" : "GraphicCorner40@1x-1.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">161"
     },
     {
+      "filename" : "GraphicCorner40@1x-2.png",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "screen-width" : ">145"
+    },
+    {
+      "filename" : "GraphicCorner44@1x.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"
