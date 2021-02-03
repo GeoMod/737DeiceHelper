@@ -98,9 +98,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 				let image = UIImage(named: "Complication/Circular")!
 				let imageProvider = CLKImageProvider(onePieceImage: image)
 				let circularSmall = CLKComplicationTemplateCircularSmallSimpleImage(imageProvider: imageProvider )
-				return circularSmall
 				#warning("Implementation is not complete yet.")
 				// you must implement all supported complications for the templates.
+				return circularSmall
 			case .graphicCircular:
 				return CLKComplicationTemplateGraphicCircularView(GraphicCircular())
 			default:
