@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+	@ScaledMetric var size: CGFloat = 32
 
 	@State var alert: AlertData?
 	@State private var showAlert = false
@@ -22,46 +23,85 @@ struct ContentView: View {
 	var body: some View {
 		NavigationView {
 			VStack {
-				Text("Assumes ≤1/8in Frost Under Wing")
-					.foregroundColor(.red)
-					.fontWeight(.bold)
-				Spacer()
 				Group {
+					Text("Assumes ≤1/8in Frost Under Wing")
+						.foregroundColor(.red)
+						.fontWeight(.bold)
 					Toggle("Upper wing frost outside CSFF area?", isOn: $frostOutsideCSFF)
+						.accentColor(.accentColor)
 						.minimumScaleFactor(0.9)
 						.lineLimit(2)
 					Toggle("Upper Wing Clean?", isOn: $upperWingClean)
-					Spacer()
+				}.padding([.leading, .trailing, .top])
 					Divider()
+				Group {
 					Text(upperWingClean ? "Upper Wing Clean" : "Frost Inside CSFF")
 						.foregroundColor(upperWingClean ? .green : .blue)
+					HStack {
+						Image(systemName:outsideAirTemp ? "thermometer.sun.fill" : "thermometer.snowflake")
+							.renderingMode(.original)
+							.font(.largeTitle)
+						Toggle("OAT ≥ 4ºC", isOn: $outsideAirTemp)
+					}
+					HStack {
+						Image(systemName: "airplane.circle.fill")
+							.renderingMode(.original)
+							.font(.largeTitle)
+						Toggle("Fuel ≥ -16ºC", isOn: $fuelTemp)
+					}
 
-					Toggle("OAT ≥ 4ºC", isOn: $outsideAirTemp)
-						.padding(.bottom, 2)
-					Toggle("Fuel ≥ -16ºC", isOn: $fuelTemp)
-						.padding(.bottom, 2)
-					Toggle("No Visible Moisture?", isOn: $noVisibleMoisture)
+					HStack {
+						Image(systemName:noVisibleMoisture ? "cloud.sun.fill" : "cloud.sleet.fill")
+							.renderingMode(.original)
+							.font(.largeTitle)
+						Toggle("No Visible Moisture?", isOn: $noVisibleMoisture)
+					}
+				}.padding([.leading, .trailing])
 
-				}
 				Spacer()
+
+
+
 				HStack {
 					Button("Evaluate") {
-						// evaluate and present alert
 						evaluate()
 					}
+					.frame(maxWidth: .infinity, maxHeight: 50)
+					.foregroundColor(.white)
+					.font(.title)
+					.background(RoundedRectangle(cornerRadius: 20).fill(Color.blue))
+					.shadow(color: Color.black.opacity(0.8), radius: 7, x: 5, y: 5)
+					.padding()
 					Button("Reset") {
 						resetValues()
 					}
+					.frame(maxWidth: .infinity, maxHeight: 50)
+					.foregroundColor(.white)
+					.font(.title)
+					.background(RoundedRectangle(cornerRadius: 20).fill(Color.red))
+					.shadow(color: Color.black.opacity(0.8), radius: 7, x: 5, y: 5)
+					.padding()
 				}
+				Spacer()
 			}
 			.font(.title2)
-			.padding()
-			.navigationTitle("Deice 737?")
+
+			// Purple background color.
+			.background(Color("BackgroundColor").edgesIgnoringSafeArea(.bottom)
+			.opacity(0.7)
+			.cornerRadius(30)
+			.padding([.leading, .trailing], 6)
+			)
+
+			.navigationBarTitle("Deice 737?")
+
+			.background(Image("clouds").resizable().edgesIgnoringSafeArea(.all))
 
 			.alert(isPresented: $showAlert, content: {
 				Alert(title: Text(alert?.title ?? "Error Occurred"), message: Text(alert?.description ?? "💺"), dismissButton: .default(Text("OK")))
 			})
-		}
+
+		}.colorScheme(.dark)
 	}
 
 	private func resetValues() {
