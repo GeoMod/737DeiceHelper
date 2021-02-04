@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-	@ScaledMetric var size: CGFloat = 32
 
 	@State var alert: AlertData?
 	@State private var showAlert = false
@@ -36,7 +35,8 @@ struct ContentView: View {
 					Divider()
 				Group {
 					Text(upperWingClean ? "Upper Wing Clean" : "Frost Inside CSFF")
-						.foregroundColor(upperWingClean ? .green : .blue)
+						.fontWeight(.bold)
+						.foregroundColor(upperWingClean ? .green : .orange)
 					HStack {
 						Image(systemName:outsideAirTemp ? "thermometer.sun.fill" : "thermometer.snowflake")
 							.renderingMode(.original)
@@ -44,7 +44,7 @@ struct ContentView: View {
 						Toggle("OAT ≥ 4ºC", isOn: $outsideAirTemp)
 					}
 					HStack {
-						Image(systemName: "airplane.circle.fill")
+						Image(systemName:fuelTemp ? "airplane.circle.fill" : "drop.triangle.fill")
 							.renderingMode(.original)
 							.font(.largeTitle)
 						Toggle("Fuel ≥ -16ºC", isOn: $fuelTemp)
@@ -59,8 +59,6 @@ struct ContentView: View {
 				}.padding([.leading, .trailing])
 
 				Spacer()
-
-
 
 				HStack {
 					Button("Evaluate") {
@@ -79,7 +77,7 @@ struct ContentView: View {
 					.foregroundColor(.white)
 					.font(.title)
 					.background(RoundedRectangle(cornerRadius: 20).fill(Color.red))
-					.shadow(color: Color.black.opacity(0.8), radius: 7, x: 5, y: 5)
+					.shadow(color: Color.black.opacity(0.6), radius: 7, x: 5, y: 5)
 					.padding()
 				}
 				Spacer()
