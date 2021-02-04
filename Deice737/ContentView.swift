@@ -61,15 +61,6 @@ struct ContentView: View {
 				Spacer()
 
 				HStack {
-					Button("Evaluate") {
-						evaluate()
-					}
-					.frame(maxWidth: .infinity, maxHeight: 50)
-					.foregroundColor(.white)
-					.font(.title)
-					.background(RoundedRectangle(cornerRadius: 20).fill(Color.blue))
-					.shadow(color: Color.black.opacity(0.8), radius: 7, x: 5, y: 5)
-					.padding()
 					Button("Reset") {
 						resetValues()
 					}
@@ -78,6 +69,15 @@ struct ContentView: View {
 					.font(.title)
 					.background(RoundedRectangle(cornerRadius: 20).fill(Color.red))
 					.shadow(color: Color.black.opacity(0.6), radius: 7, x: 5, y: 5)
+					.padding()
+					Button("Evaluate") {
+						evaluate()
+					}
+					.frame(maxWidth: .infinity, maxHeight: 50)
+					.foregroundColor(.white)
+					.font(.title)
+					.background(RoundedRectangle(cornerRadius: 20).fill(Color.blue))
+					.shadow(color: Color.black.opacity(0.8), radius: 7, x: 5, y: 5)
 					.padding()
 				}
 				Spacer()
