@@ -27,7 +27,6 @@ struct ContentView: View {
 						.foregroundColor(.red)
 						.fontWeight(.bold)
 					Toggle("Upper wing frost outside CSFF area?", isOn: $frostOutsideCSFF)
-						.accentColor(.accentColor)
 						.minimumScaleFactor(0.9)
 						.lineLimit(2)
 					Toggle("Upper Wing Clean?", isOn: $upperWingClean)
