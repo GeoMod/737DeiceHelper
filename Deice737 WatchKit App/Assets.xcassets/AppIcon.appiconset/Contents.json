@@ -24,7 +24,7 @@
       "size" : "29x29"
     },
     {
-      "filename" : "App Icon - 29pt by 29pt (87px by 87px).png",
+      "filename" : "@3x.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "3x",
