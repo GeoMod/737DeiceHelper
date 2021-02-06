@@ -15,7 +15,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
 	// MARK: - Complication Configuration
 	func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
-		let supportedComplications: [CLKComplicationFamily] = [.circularSmall, .graphicBezel, .graphicCorner, .graphicCircular, .modularSmall, .modularLarge, .utilitarianSmall, .utilitarianLarge,.utilitarianSmallFlat]
+		let supportedComplications: [CLKComplicationFamily] = [.circularSmall, .graphicBezel, .graphicCorner, .graphicCircular, .modularSmall, .modularLarge, .utilitarianSmall, .utilitarianLarge, .utilitarianSmallFlat]
 
 		let descriptors = [
 			CLKComplicationDescriptor(identifier: "complication", displayName: displayName, supportedFamilies: supportedComplications)

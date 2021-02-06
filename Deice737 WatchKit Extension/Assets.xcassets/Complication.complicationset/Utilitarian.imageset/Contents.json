@@ -1,25 +1,25 @@
 {
   "images" : [
     {
-      "filename" : "Circular 40@1x.png",
+      "filename" : "Utilitarian 40.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
-      "filename" : "GraphicCorner44@1x.png",
+      "filename" : "Utilitarian 44.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">161"
     },
     {
-      "filename" : "GraphicCorner44@1x-1.png",
+      "filename" : "Utilitarian 44-1.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">145"
     },
     {
-      "filename" : "Utility50@1x.png",
+      "filename" : "Utilitarian 50.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"
