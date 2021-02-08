@@ -30,8 +30,10 @@ struct ContentView: View {
 						.minimumScaleFactor(0.9)
 						.lineLimit(2)
 					Toggle("Upper Wing Clean?", isOn: $upperWingClean)
-				}.padding([.leading, .trailing, .top])
-					Divider()
+				}.padding(.top)
+
+				Divider()
+
 				Group {
 					Text(upperWingClean ? "Upper Wing Clean" : "Frost Inside CSFF")
 						.fontWeight(.bold)
@@ -48,49 +50,44 @@ struct ContentView: View {
 							.font(.largeTitle)
 						Toggle("Fuel ≥ -16ºC", isOn: $fuelTemp)
 					}
-
 					HStack {
-						Image(systemName:noVisibleMoisture ? "cloud.sun.fill" : "cloud.sleet.fill")
+						Image(systemName:noVisibleMoisture ? "cloud.sleet.fill" : "cloud.fill")
 							.renderingMode(.original)
 							.font(.largeTitle)
-						Toggle("No Visible Moisture?", isOn: $noVisibleMoisture)
+						Toggle("Visible Moisture", isOn: $noVisibleMoisture)
 					}
-				}.padding([.leading, .trailing])
+					Text("rain, snow, drizzle, or fog with less than 1mi visibility")
+						.font(.footnote)
+						.foregroundColor(.gray)
+				}
 
 				Spacer()
 
 				HStack {
-					Button("Reset") {
+					Button(action: {
 						resetValues()
-					}
-					.frame(maxWidth: .infinity, maxHeight: 50)
-					.foregroundColor(.white)
-					.font(.title)
-					.background(RoundedRectangle(cornerRadius: 20).fill(Color.red))
-					.shadow(color: Color.black.opacity(0.6), radius: 7, x: 5, y: 5)
-					.padding()
-					Button("Evaluate") {
+					}, label: {
+						ButtonView(title: "Reset", backgroundColor: .red)
+					})
+
+					Button(action: {
 						evaluate()
-					}
-					.frame(maxWidth: .infinity, maxHeight: 50)
-					.foregroundColor(.white)
-					.font(.title)
-					.background(RoundedRectangle(cornerRadius: 20).fill(Color.blue))
-					.shadow(color: Color.black.opacity(0.8), radius: 7, x: 5, y: 5)
-					.padding()
+					}, label: {
+						ButtonView(title: "Evaluate", backgroundColor: .blue)
+					})
 				}
 				Spacer()
 			}
+			.padding([.leading, .trailing])
 			.font(.title2)
 
-			// Purple background color.
+			// Seahawks Blue background color.
 			.background(Color("BackgroundColor").edgesIgnoringSafeArea(.bottom)
-			.opacity(0.7)
-			.cornerRadius(30)
-			.padding([.leading, .trailing], 6)
+							.opacity(0.7)
+							.cornerRadius(30)
+							.padding([.leading, .trailing], 6)
 			)
-
-			.navigationBarTitle("Deice 737?")
+			.navigationBarTitle(Text("Deice 737?"))
 
 			.background(Image("clouds").resizable().edgesIgnoringSafeArea(.all))
 
@@ -123,7 +120,7 @@ struct ContentView: View {
 			switch upperWingClean {
 				case true:
 					if notAllSatisfied {
-						alert = AlertData(title: "Secondary Ice Inspection Required", description: "Even if the top of the wing is clean, conduct inspection 15min prior to departure for any frost inside CSFF. If so, you MUST DEICE.")
+						alert = AlertData(title: "Secondary Ice Inspection Required", description: "Even if the top of the wing was clean, conduct inspection 15min prior to departure for any frost inside CSFF area. If so, you MUST DEICE.")
 						showAlert = true
 					}
 				case false:
