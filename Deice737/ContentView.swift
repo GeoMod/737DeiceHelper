@@ -1,5 +1,5 @@
-//
 //  ContentView.swift
+//
 //  Deice737
 //
 //  Created by Daniel O'Leary on 2/3/21.
@@ -23,25 +23,24 @@ struct ContentView: View {
 		NavigationView {
 			VStack {
 				Group {
-					Text("Assumes ≤1/8in Frost was Discovered Under the Wing During Initial Walk Around.")
-						.foregroundColor(.red)
+					Text("Assumes ≤1/8in Frost Discovered Under Wing During Walk Around.")
 						.fontWeight(.bold)
+						.foregroundColor(.red)
+						.minimumScaleFactor(0.8)
 					HStack {
-						Text("Is there frost OUTSIDE the CSFF area on top of the wing?")
+						Text("Is frost OUTSIDE the CSFF area on top of the wing?")
 							.minimumScaleFactor(0.8)
-							.lineLimit(2)
+						Spacer()
 						Button(action: {
 							frostOutsideCSFF = true
 							evaluate()
 						}, label: {
 							Text(frostOutsideCSFF ? "Yes" : "No")
 						})
-						.frame(width: 100, height: 50, alignment: .center)
+						.frame(width: 100, height: 50)
 						.background(RoundedRectangle(cornerRadius: 30).fill(frostOutsideCSFF ? Color.green : Color.red))
 						.foregroundColor(.white)
-
 					}
-
 					VStack(alignment: .leading) {
 						HStack {
 							Image(systemName: "arrow.triangle.2.circlepath")
@@ -60,9 +59,7 @@ struct ContentView: View {
 							Spacer()
 						}
 					}
-				}.padding(.top)
-
-				Divider()
+				}.padding(.top, 3)
 
 				Group {
 					HStack {
@@ -70,6 +67,7 @@ struct ContentView: View {
 							.renderingMode(.original)
 							.font(.largeTitle)
 						Text("Is OAT greater than or equal to +4ºC?")
+							.minimumScaleFactor(0.8)
 						Spacer()
 						Button(action: {
 							outsideAirTemp.toggle()
@@ -85,6 +83,7 @@ struct ContentView: View {
 							.renderingMode(.original)
 							.font(.largeTitle)
 						Text("Is Fuel greater than or equal to -16ºC?")
+							.minimumScaleFactor(0.8)
 						Spacer()
 						Button(action: {
 							fuelTemp.toggle()
@@ -100,6 +99,7 @@ struct ContentView: View {
 							.renderingMode(.original)
 							.font(.largeTitle)
 						Text("Is Visible Moisture Present?")
+							.minimumScaleFactor(0.8)
 						Spacer()
 						Button(action: {
 							noVisibleMoisture.toggle()
