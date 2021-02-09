@@ -145,7 +145,9 @@ struct ContentView: View {
 			.background(Image("clouds").resizable().edgesIgnoringSafeArea(.all))
 
 			.alert(isPresented: $showAlert, content: {
-				Alert(title: Text(alert?.title ?? "Error Occurred"), message: Text(alert?.description ?? ""), dismissButton: .default(Text("OK")))
+				Alert(title: Text(alert?.title ?? "Error Occurred"), message: Text(alert?.description ?? ""), dismissButton: .default(Text("OK"), action: {
+					frostOutsideCSFF = false
+				}))
 			})
 
 		}.colorScheme(.dark)
@@ -191,6 +193,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+		Group {
+			ContentView()
+//				.previewDevice("iPhone SE")
+//			ContentView()
+//				.previewDevice("iPhone 12 Pro Max")
+		}
 	}
 }

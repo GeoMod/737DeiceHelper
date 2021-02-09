@@ -13,7 +13,7 @@ struct ButtonView: View {
 
     var body: some View {
 		Text(title)
-			.frame(maxWidth: .infinity, maxHeight: 50)
+			.frame(maxWidth: 200, minHeight: 40)
 			.foregroundColor(.white)
 			.font(.title)
 			.background(RoundedRectangle(cornerRadius: 20).fill(backgroundColor))
