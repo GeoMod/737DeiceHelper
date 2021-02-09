@@ -23,57 +23,110 @@ struct ContentView: View {
 		NavigationView {
 			VStack {
 				Group {
-					Text("Assumes ≤1/8in Frost Under Wing")
+					Text("Assumes ≤1/8in Frost was Discovered Under the Wing During Initial Walk Around.")
 						.foregroundColor(.red)
 						.fontWeight(.bold)
-					Toggle("Upper wing frost outside CSFF area?", isOn: $frostOutsideCSFF)
-						.minimumScaleFactor(0.9)
-						.lineLimit(2)
-					Toggle("Upper Wing Clean?", isOn: $upperWingClean)
+					HStack {
+						Text("Is there frost OUTSIDE the CSFF area on top of the wing?")
+							.minimumScaleFactor(0.8)
+							.lineLimit(2)
+						Button(action: {
+							frostOutsideCSFF = true
+							evaluate()
+						}, label: {
+							Text(frostOutsideCSFF ? "Yes" : "No")
+						})
+						.frame(width: 100, height: 50, alignment: .center)
+						.background(RoundedRectangle(cornerRadius: 30).fill(frostOutsideCSFF ? Color.green : Color.red))
+						.foregroundColor(.white)
+
+					}
+
+					VStack(alignment: .leading) {
+						HStack {
+							Image(systemName: "arrow.triangle.2.circlepath")
+								.opacity(0.25)
+								.shadow(color: Color.black.opacity(0.6), radius: 1, x: 2, y: 3)
+								.padding(.trailing)
+							Button(action: {
+								upperWingClean.toggle()
+							}, label: {
+								Text(upperWingClean ? "Upper Wing Clean" : "Frost Inside CSFF")
+									.foregroundColor(upperWingClean ? .green : .orange)
+									.font(.system(size: 30, weight: .bold))
+									.shadow(color: Color.black.opacity(0.6), radius: 7, x: 5, y: 5)
+
+							})
+							Spacer()
+						}
+					}
 				}.padding(.top)
 
 				Divider()
 
 				Group {
-					Text(upperWingClean ? "Upper Wing Clean" : "Frost Inside CSFF")
-						.fontWeight(.bold)
-						.foregroundColor(upperWingClean ? .green : .orange)
 					HStack {
 						Image(systemName:outsideAirTemp ? "thermometer.sun.fill" : "thermometer.snowflake")
 							.renderingMode(.original)
 							.font(.largeTitle)
-						Toggle("OAT ≥ 4ºC", isOn: $outsideAirTemp)
+						Text("Is OAT greater than or equal to +4ºC?")
+						Spacer()
+						Button(action: {
+							outsideAirTemp.toggle()
+						}, label: {
+							Text(outsideAirTemp ? "Yes" : "No")
+						})
+						.frame(width: 100, height: 50, alignment: .center)
+						.background(RoundedRectangle(cornerRadius: 30).fill(outsideAirTemp ? Color.green : Color.red))
+						.foregroundColor(.white)
 					}
 					HStack {
 						Image(systemName:fuelTemp ? "airplane.circle.fill" : "drop.triangle.fill")
 							.renderingMode(.original)
 							.font(.largeTitle)
-						Toggle("Fuel ≥ -16ºC", isOn: $fuelTemp)
+						Text("Is Fuel greater than or equal to -16ºC?")
+						Spacer()
+						Button(action: {
+							fuelTemp.toggle()
+						}, label: {
+							Text(fuelTemp ? "Yes" : "No")
+						})
+						.frame(width: 100, height: 50, alignment: .center)
+						.background(RoundedRectangle(cornerRadius: 30).fill(fuelTemp ? Color.green : Color.red))
+						.foregroundColor(.white)
 					}
 					HStack {
-						Image(systemName:noVisibleMoisture ? "cloud.sleet.fill" : "cloud.fill")
+						Image(systemName:noVisibleMoisture ? "sun.max.fill" : "cloud.sleet.fill")
 							.renderingMode(.original)
 							.font(.largeTitle)
-						Toggle("Visible Moisture", isOn: $noVisibleMoisture)
+						Text("Is Visible Moisture Present?")
+						Spacer()
+						Button(action: {
+							noVisibleMoisture.toggle()
+						}, label: {
+							Text(noVisibleMoisture ? "No" : "Yes")
+						})
+						.frame(width: 100, height: 50, alignment: .center)
+						.background(RoundedRectangle(cornerRadius: 30).fill(noVisibleMoisture ? Color.green : Color.red))
+						.foregroundColor(.white)
 					}
 					Text("rain, snow, drizzle, or fog with less than 1mi visibility")
 						.font(.footnote)
 						.foregroundColor(.gray)
-				}
+				}.padding([.top])
 
-				Spacer()
 
-				HStack {
-					Button(action: {
-						resetValues()
-					}, label: {
-						ButtonView(title: "Reset", backgroundColor: .red)
-					})
-
+				VStack {
 					Button(action: {
 						evaluate()
 					}, label: {
 						ButtonView(title: "Evaluate", backgroundColor: .blue)
+					})
+					Button(action: {
+						resetValues()
+					}, label: {
+						Text("Reset")
+							.foregroundColor(.red)
 					})
 				}
 				Spacer()
@@ -92,7 +145,7 @@ struct ContentView: View {
 			.background(Image("clouds").resizable().edgesIgnoringSafeArea(.all))
 
 			.alert(isPresented: $showAlert, content: {
-				Alert(title: Text(alert?.title ?? "Error Occurred"), message: Text(alert?.description ?? "💺"), dismissButton: .default(Text("OK")))
+				Alert(title: Text(alert?.title ?? "Error Occurred"), message: Text(alert?.description ?? ""), dismissButton: .default(Text("OK")))
 			})
 
 		}.colorScheme(.dark)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185DF52F25D0E6890032A29A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF52E25D0E6890032A29A /* Model.swift */; };
+		185DF53025D0E6890032A29A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DF52E25D0E6890032A29A /* Model.swift */; };
 		18621DD525CE170800F59CD3 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18621DD425CE170800F59CD3 /* ButtonView.swift */; };
 		18DCD4BF25CADA6800A502A9 /* Deice737App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4BE25CADA6800A502A9 /* Deice737App.swift */; };
 		18DCD4C125CADA6800A502A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD4C025CADA6800A502A9 /* ContentView.swift */; };
@@ -85,6 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		185DF52E25D0E6890032A29A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		18621DD425CE170800F59CD3 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		18DCD4BB25CADA6800A502A9 /* Deice737.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deice737.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18DCD4BE25CADA6800A502A9 /* Deice737App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deice737App.swift; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 		18DCD4B225CADA6700A502A9 = {
 			isa = PBXGroup;
 			children = (
+				185DF52E25D0E6890032A29A /* Model.swift */,
 				18DCD4BD25CADA6800A502A9 /* Deice737 */,
 				18DCD4E425CADA6A00A502A9 /* Deice737 WatchKit App */,
 				18DCD4F025CADA6B00A502A9 /* Deice737 WatchKit Extension */,
@@ -433,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185DF52F25D0E6890032A29A /* Model.swift in Sources */,
 				18DCD4C125CADA6800A502A9 /* ContentView.swift in Sources */,
 				18DCD52025CADAC200A502A9 /* AlertData.swift in Sources */,
 				18621DD525CE170800F59CD3 /* ButtonView.swift in Sources */,
@@ -460,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185DF53025D0E6890032A29A /* Model.swift in Sources */,
 				18DCD4F625CADA6B00A502A9 /* NotificationController.swift in Sources */,
 				18DCD4F425CADA6B00A502A9 /* ContentView.swift in Sources */,
 				18DCD4FA25CADA6B00A502A9 /* ComplicationController.swift in Sources */,

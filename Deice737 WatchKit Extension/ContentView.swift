@@ -39,7 +39,10 @@ struct ContentView: View {
 					.padding(.bottom, 2)
 				Toggle("Fuel ≥ -16ºC", isOn: $fuelTemp)
 					.padding(.bottom, 2)
-				Toggle("No Visible Moisture?", isOn: $noVisibleMoisture)
+				Toggle("Visible Moisture", isOn: $noVisibleMoisture)
+				Text("rain, snow, drizzle, or fog with less than 1mi visibility")
+					.font(.footnote)
+					.foregroundColor(.gray)
 
 				Button("Evaluate") {
 					// evaluate and present alert
@@ -68,7 +71,7 @@ struct ContentView: View {
 			switch upperWingClean {
 				case true:
 					if notAllSatisfied {
-						alert = AlertData(title: "Secondary Ice Inspection Required", description: "Even if the top of the wing is clean, conduct inspection 15min prior to departure for any frost inside CSFF. If so, you MUST DEICE.")
+						alert = AlertData(title: "Secondary Ice Inspection Required", description: "Even if the top of the wing was clean, conduct inspection 15min prior to departure for any frost inside CSFF. If so, you MUST DEICE.")
 						showAlert = true
 					}
 				case false:
