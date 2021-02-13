@@ -9,11 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
 
+	init() {
+		UISegmentedControl.appearance().setTitleTextAttributes([.font : UIFont.preferredFont(forTextStyle: .title3)], for: .normal)
+	}
+
+	enum UpperWingCondition {
+		case contaminated
+		case clean
+	}
+
 	@State var alert: AlertData?
 	@State private var showAlert = false
 
+	@State private var upperWingCondition 	= UpperWingCondition.contaminated
+
 	@State private var frostOutsideCSFF 	= false
-	@State private var upperWingClean 		= false
 	@State private var noVisibleMoisture 	= false
 	@State private var outsideAirTemp 		= false
 	@State private var fuelTemp 			= false
@@ -27,7 +37,6 @@ struct ContentView: View {
 						.fontWeight(.bold)
 						.foregroundColor(.red)
 						.minimumScaleFactor(0.8)
-						.padding([.leading, .trailing])
 					HStack {
 						Text("Is frost OUTSIDE the CSFF area on top of the wing?")
 							.minimumScaleFactor(0.8)
@@ -38,22 +47,16 @@ struct ContentView: View {
 						}, label: {
 							YesNoButtonView(title: frostOutsideCSFF ? "Yes" : "No", condition: frostOutsideCSFF)
 						})
-					}
-					VStack(alignment: .leading) {
-						HStack {
-							Image(systemName: "arrow.triangle.2.circlepath")
-								.opacity(0.25)
-							Button(action: {
-								upperWingClean.toggle()
-							}, label: {
-								Text(upperWingClean ? "Upper Wing Clean" : "Frost Inside CSFF")
-									.foregroundColor(upperWingClean ? .green : .orange)
-									.font(.system(size: 30, weight: .bold))
-									.shadow(color: Color.black.opacity(0.6), radius: 7, x: 5, y: 5)
-							})
-						}
-					}
-				}.padding(.top, 3)
+					}.padding(.top, 3)
+
+					Picker("Upper Wing Clean?", selection: $upperWingCondition) {
+						Text("Frost Inside CSFF")
+							.tag(UpperWingCondition.contaminated)
+						Text("Upper Wing Clean")
+							.tag(UpperWingCondition.clean)
+					}.pickerStyle(SegmentedPickerStyle())
+					.padding(.top)
+				}
 
 				// OAT, Fuel Temp, Precip Conditions
 				ThreeConditionsView
@@ -83,7 +86,7 @@ struct ContentView: View {
 					Image("clouds").resizable().edgesIgnoringSafeArea(.all)
 					// Seahawks Blue background color.
 					Color("BackgroundColor").edgesIgnoringSafeArea(.bottom)
-						.opacity(0.7)
+						.opacity(0.8)
 						.cornerRadius(30)
 				})
 
@@ -92,7 +95,7 @@ struct ContentView: View {
 					frostOutsideCSFF = false
 				}))
 			})
-			.navigationBarTitle(Text("Deice 737?"))
+			.navigationBarTitle(Text("CSFF Evaluator"))
 		}
 		.colorScheme(.dark)
 	}
@@ -146,10 +149,10 @@ struct ContentView: View {
 
 	private func resetValues() {
 		frostOutsideCSFF 	= false
-		upperWingClean 		= false
 		noVisibleMoisture 	= false
 		outsideAirTemp 		= false
 		fuelTemp 			= false
+		upperWingCondition 	= .contaminated
 	}
 
 
@@ -163,13 +166,13 @@ struct ContentView: View {
 			alert = AlertData(title: "Good To Go!", description: "No Secondary Ice Inspection or Deicing required.")
 			showAlert = true
 		} else {
-			switch upperWingClean {
-				case true:
+			switch upperWingCondition {
+				case .clean:
 					if notAllSatisfied {
 						alert = AlertData(title: "Secondary Ice Inspection Required", description: "Even if the top of the wing was clean, conduct inspection 15min prior to departure for any frost inside CSFF area. If so, you MUST DEICE.")
 						showAlert = true
 					}
-				case false:
+				case .contaminated:
 					if notAllSatisfied {
 						alert = AlertData(title: "Deicing Required", description: "Frost/Ice inside CSFF area is not acceptable when all conditions are not met.")
 						showAlert = true
@@ -185,12 +188,12 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
 		Group {
-			ContentView()
-
-
-//				.previewDevice("iPhone SE")
 //			ContentView()
-//				.previewDevice("iPhone 12 Pro Max")
+//				.previewDevice("iPhone SE")
+			ContentView()
+//				.previewDevice("iPhone 12 Pro")
+//			ContentView()
+//				.previewDevice("iPhone 12 mini")
 		}
 	}
 }
