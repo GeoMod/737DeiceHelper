@@ -27,7 +27,7 @@ struct YesNoButtonView: View {
 
 	var body: some View {
 		Text(title)
-			.padding([.leading, .trailing], 30)
+			.padding([.leading, .trailing], 20)
 			.padding([.top, .bottom], 10)
 			.background(RoundedRectangle(cornerRadius: 30).fill(condition ? Color.green : Color.red))
 			.foregroundColor(.white)
