@@ -11,7 +11,7 @@ import SwiftUI
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
 
-	let displayName = "Deice 737?"
+	let displayName = "737 CSFF"
 
 	// MARK: - Complication Configuration
 	func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {

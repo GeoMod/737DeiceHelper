@@ -13,6 +13,7 @@ struct ContentView: View {
 		UISegmentedControl.appearance().setTitleTextAttributes([.font : UIFont.preferredFont(forTextStyle: .title3)], for: .normal)
 	}
 
+
 	enum UpperWingCondition {
 		case contaminated
 		case clean

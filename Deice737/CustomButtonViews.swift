@@ -15,7 +15,6 @@ struct EvaluateButtonView: View {
 		Text(title)
 			.frame(maxWidth: 200, minHeight: 40)
 			.foregroundColor(.white)
-//			.font(.title)
 			.background(RoundedRectangle(cornerRadius: 20).fill(backgroundColor))
 			.shadow(color: Color.black.opacity(0.6), radius: 7, x: 5, y: 5)
 			.padding()
