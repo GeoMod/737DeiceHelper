@@ -27,7 +27,8 @@ struct YesNoButtonView: View {
 
 	var body: some View {
 		Text(title)
-			.frame(width: 100, height: 50)
+			.padding([.leading, .trailing], 30)
+			.padding([.top, .bottom], 10)
 			.background(RoundedRectangle(cornerRadius: 30).fill(condition ? Color.green : Color.red))
 			.foregroundColor(.white)
 	}
@@ -36,6 +37,10 @@ struct YesNoButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-		EvaluateButtonView(title: "Evaluate", backgroundColor: .blue)
+		VStack {
+			EvaluateButtonView(title: "Evaluate", backgroundColor: .blue)
+
+			YesNoButtonView(title: "Yes", condition: true)
+		}
     }
 }

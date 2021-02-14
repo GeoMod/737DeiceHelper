@@ -9,11 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-	init() {
-		UISegmentedControl.appearance().setTitleTextAttributes([.font : UIFont.preferredFont(forTextStyle: .title3)], for: .normal)
-	}
-
-
 	enum UpperWingCondition {
 		case contaminated
 		case clean
@@ -31,84 +26,89 @@ struct ContentView: View {
 
 
 	var body: some View {
-		NavigationView {
-			VStack {
-				Group {
-					Text("Assumes ≤1/8in Frost Discovered Under Wing During Walk Around.")
-						.fontWeight(.bold)
-						.foregroundColor(.red)
-						.minimumScaleFactor(0.8)
-					HStack {
-						Text("Is frost OUTSIDE the CSFF area on top of the wing?")
-							.minimumScaleFactor(0.8)
-						Spacer()
-						Button(action: {
-							frostOutsideCSFF = true
-							evaluate()
-						}, label: {
-							YesNoButtonView(title: frostOutsideCSFF ? "Yes" : "No", condition: frostOutsideCSFF)
-						})
-					}.padding(.top, 3)
+		VStack {
+			Text("CSFF Evaluator")
+				.font(.title)
+				.fontWeight(.bold)
+			Spacer()
+			Group {
+				Text("Assumes ≤1/8in Frost Discovered Under Wing During Walk Around.")
+					.fontWeight(.bold)
+					.foregroundColor(.red)
+					.minimumScaleFactor(0.6)
+					.lineLimit(2)
 
-					Picker("Upper Wing Clean?", selection: $upperWingCondition) {
-						Text("Frost Inside CSFF")
-							.tag(UpperWingCondition.contaminated)
-						Text("Upper Wing Clean")
-							.tag(UpperWingCondition.clean)
-					}.pickerStyle(SegmentedPickerStyle())
-					.padding(.top)
-				}
-
-				// OAT, Fuel Temp, Precip Conditions
-				ThreeConditionsView
-
-				Spacer()
-
-				VStack {
+				HStack {
+					Text("Is frost OUTSIDE the CSFF area on top of the wing?")
+						.minimumScaleFactor(0.7)
+						.lineLimit(2)
+					Spacer()
 					Button(action: {
+						frostOutsideCSFF = true
 						evaluate()
 					}, label: {
-						EvaluateButtonView(title: "Evaluate", backgroundColor: .blue)
+						YesNoButtonView(title: frostOutsideCSFF ? "Yes" : "No", condition: frostOutsideCSFF)
 					})
-					Button(action: {
-						resetValues()
-					}, label: {
-						Text("Reset")
-							.foregroundColor(.red)
-					})
-				}
-				Spacer()
+				}.padding(.top, 3)
+
+				Picker("Upper Wing Clean?", selection: $upperWingCondition) {
+					Text("Frost Inside CSFF")
+						.fontWeight(.bold)
+						.tag(UpperWingCondition.contaminated)
+					Text("Upper Wing Clean")
+						.tag(UpperWingCondition.clean)
+				}.pickerStyle(SegmentedPickerStyle())
+				.padding(.top)
 			}
-			.font(.title2)
-			.padding([.leading, .trailing])
 
-			.background(
-				ZStack {
-					Image("clouds").resizable().edgesIgnoringSafeArea(.all)
-					// Seahawks Blue background color.
-					Color("BackgroundColor").edgesIgnoringSafeArea(.bottom)
-						.opacity(0.8)
-						.cornerRadius(30)
+			// OAT, Fuel Temp, Precip Conditions
+			ThreeConditionsView
+
+			Spacer()
+
+			VStack {
+				Button(action: {
+					evaluate()
+				}, label: {
+					EvaluateButtonView(title: "Evaluate", backgroundColor: .blue)
 				})
-
-			.alert(isPresented: $showAlert, content: {
-				Alert(title: Text(alert?.title ?? "Error Occurred"), message: Text(alert?.description ?? ""), dismissButton: .default(Text("OK"), action: {
-					frostOutsideCSFF = false
-				}))
-			})
-			.navigationBarTitle(Text("CSFF Evaluator"))
+				Button(action: {
+					resetValues()
+				}, label: {
+					Text("Reset")
+						.foregroundColor(.red)
+				})
+			}
+			Spacer()
 		}
+		.font(.title2)
+		.padding([.leading, .trailing], 2)
 		.colorScheme(.dark)
+
+		.background(
+			// Seahawks Blue background color.
+			Color("BackgroundColor").edgesIgnoringSafeArea(.all)
+		)
+
+		.alert(isPresented: $showAlert, content: {
+			Alert(title: Text(alert?.title ?? "Error Occurred"), message: Text(alert?.description ?? ""), dismissButton: .default(Text("OK"), action: {
+				frostOutsideCSFF = false
+			}))
+		})
+
+
 	}
 
 	private var ThreeConditionsView: some View {
 		Group {
+
 			HStack {
 				Image(systemName:outsideAirTemp ? "thermometer.sun.fill" : "thermometer.snowflake")
 					.renderingMode(.original)
 					.font(.largeTitle)
 				Text("Is OAT greater than or equal to +4ºC?")
 					.minimumScaleFactor(0.8)
+					.lineLimit(2)
 				Spacer()
 				Button(action: {
 					outsideAirTemp.toggle()
@@ -122,6 +122,7 @@ struct ContentView: View {
 					.font(.largeTitle)
 				Text("Is Fuel greater than or equal to -16ºC?")
 					.minimumScaleFactor(0.8)
+					.lineLimit(2)
 				Spacer()
 				Button(action: {
 					fuelTemp.toggle()
@@ -134,7 +135,8 @@ struct ContentView: View {
 					.renderingMode(.original)
 					.font(.largeTitle)
 				Text("Is Visible Moisture Present?")
-					.minimumScaleFactor(0.8)
+					.minimumScaleFactor(0.7)
+					.lineLimit(2)
 				Spacer()
 				Button(action: {
 					noVisibleMoisture.toggle()
@@ -145,6 +147,8 @@ struct ContentView: View {
 			Text("rain, snow, drizzle, or fog with less than 1mi visibility")
 				.font(.footnote)
 				.foregroundColor(.gray)
+				.minimumScaleFactor(0.8)
+				.lineLimit(2)
 		}.padding(.top)
 	}
 
@@ -192,9 +196,9 @@ struct ContentView_Previews: PreviewProvider {
 //			ContentView()
 //				.previewDevice("iPhone SE")
 			ContentView()
-//				.previewDevice("iPhone 12 Pro")
-//			ContentView()
-//				.previewDevice("iPhone 12 mini")
+				.previewDevice("iPhone 12 Pro")
+			ContentView()
+				.previewDevice("iPhone SE (1st generation)")
 		}
 	}
 }
