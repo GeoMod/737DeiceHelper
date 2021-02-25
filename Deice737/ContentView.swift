@@ -197,8 +197,8 @@ struct ContentView_Previews: PreviewProvider {
 //				.previewDevice("iPhone SE")
 			ContentView()
 				.previewDevice("iPhone 12 Pro")
-			ContentView()
-				.previewDevice("iPhone SE (1st generation)")
+//			ContentView()
+//				.previewDevice("iPhone SE (1st generation)")
 		}
 	}
 }
